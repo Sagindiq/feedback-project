@@ -1,0 +1,175 @@
+@import "../../sass/mixins";
+//filter info
+.main__filter-info {
+    width: 255px;
+    height: 137px;
+
+    background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+    border-radius: 10px;
+}
+
+.main__filter-info h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: #FFFFFF;
+    letter-spacing: -0.25px;
+    padding-top: 62px;
+    margin: 0 auto 0 24px;
+}
+
+.main__filter-info > p {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: #fff;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+    margin: 0;
+    padding: 0;
+    margin-left: 24px;
+}
+
+//choice - radio
+.main__filter-selections {
+    margin: 0;
+    padding: 0;
+    width: 255px;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.main__filter-content {
+    margin: 0;
+    padding: 0;
+    width: 181px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 24px 0;
+    margin: 0 auto 14px 24px;
+}
+
+.filter__label {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 14px;
+}
+
+.filter__span {
+    width: 100%;
+    height: 100%;
+    padding: 5px 16px 6px 16px;
+    font-family: "Jost", sans-serif;
+    background-color: #f2f4ff;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    border-radius: 10px;
+    margin-right: 8px;
+
+    &:nth-child(4) {
+        margin-right: 0px;
+    }
+    
+    &:nth-child(5),
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.filter__radio:hover + .filter__span {
+    background-color: #CFD7FF;
+    cursor: pointer;
+}
+
+.filter__radio:checked +  .filter__span {
+    background-color: #4661E6;
+    color: #fff;
+}
+
+// Roadmap
+
+.filter__roadmap {
+    width: 255px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 24px;
+}
+
+.filter__roadmap-content {
+    padding: 19px 24px 24px 24px;
+}
+
+.filter__roadmap-head {
+    width: 207px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.filter__roadmap-title {
+    margin: 0;
+    padding: 0;
+    @include text (18px, 700, 26px);
+    letter-spacing: -0.25px;
+    color: #3A4374;
+}
+
+.filter__roadmap-link {
+    margin: 0;
+    padding: 0;
+    @include text (13px, 600, 19px);
+    text-decoration: underline;
+    color: #4661E6;
+}
+
+.filter__roadmap-link:hover {
+    color: #8397F8;
+    cursor: pointer;
+}
+
+.filter__roadmap-list {
+    @include reset-list;
+    margin-top: 24px;
+}
+
+.filter__roadmap-item {
+    display: flex;
+    align-items: center;
+}
+
+.filter__roadmap-item::before {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 16px;
+    content: '';
+}
+
+.filter__roadmap-item:first-child::before {
+    background-color: #F49F85;
+}
+
+.filter__roadmap-item:nth-child(2)::before {
+    background-color: #AD1FEA;
+}
+
+.filter__roadmap-item:last-child::before {
+    background-color: #62BCFA;
+}
+
+.filter__roadmap-item-text {
+    margin: 0;
+    padding: 0;
+    @include text (16px, 400, 23px);
+    color: #647196;
+    margin-right: auto;
+}

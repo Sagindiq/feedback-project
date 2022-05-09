@@ -1,0 +1,24 @@
+.header__container {
+    width: 825px;
+    margin: 0 auto;
+    background-color: #373F68;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header__img {
+    padding: 24px 0;
+    margin-left: 24px;
+    margin-right: 16px;
+}
+
+.header__suggestion {
+    color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    margin-left: 38px;
+}
