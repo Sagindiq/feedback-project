@@ -1,10 +1,10 @@
 
 
 const Features = (props) => {
-    const {ClassName, ...prop} = props;
+    const { ...prop} = props;
 
     return (
-        <span className={ClassName} {...prop} />
+        <span {...prop} />
     );
 }
 

@@ -3,12 +3,13 @@ import "../../sass/_general.scss"
 // import "./filter-radio.scss"
 
 const FilterRadio = (props) => {
-    const { type, ...prop} = props;
+    const {spanCName, labelcname, children, ...prop} = props;
+
 
     return (
-        <label className="filter__label">
-            <input className="filter__radio visually-hidden" type="radio" name="filter-radio" />
-            <Features className="filter__span" {...prop} />
+        <label className={labelcname}>
+            <input type="radio" {...prop} />
+            <Features className={spanCName} children={children} />
         </label>
     );
 }

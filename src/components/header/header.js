@@ -1,5 +1,6 @@
 import "./header.scss";
-import HeaderLogo from "../../assets/img/lamp.png"
+import HeaderLogo from "../../assets/img/lamp.png";
+import HeaderSortBtnImg from "../../assets/img/down-vector.svg";
 const Header = () => {
 
     
@@ -12,6 +13,10 @@ const Header = () => {
 
             <strong className="header__suggestion">6 Suggestion</strong>
             
+            <button className="header__sort-btn">
+                <p className="header__sort-btn-text"><span>Sort by:</span>Null</p>
+                <img src={HeaderSortBtnImg} alt="header sort button img" />
+            </button>
             
             </div>
 

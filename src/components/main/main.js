@@ -18,12 +18,12 @@ const Main = () => {
 
                         <div className="main__filter-selections">
                             <div className="main__filter-content">
-                                <FilterRadio  name="filter-radio">All</FilterRadio>
-                                <FilterRadio name="filter-radio">UI</FilterRadio>
-                                <FilterRadio name="filter-radio">UX</FilterRadio>
-                                <FilterRadio name="filter-radio">Enhancement</FilterRadio>
-                                <FilterRadio name="filter-radio">Bug</FilterRadio>
-                                <FilterRadio name="filter-radio">Feature</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">All</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">UI</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">UX</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">Enhancement</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">Bug</FilterRadio>
+                                <FilterRadio className="filter__radio visually-hidden" labelcname="filter__label" spanCName="filter__span" name="filter-radio">Feature</FilterRadio>
                             </div>
 
                         </div>
@@ -37,18 +37,21 @@ const Main = () => {
                                     </div>
                                     <ul className="filter__roadmap-list">
                                         <li className="filter__roadmap-item">
-                                            <p className="filter__roadmap-item-text">Planned</p>
+                                            {/* <p className="filter__roadmap-item-text">Planned</p> */}
+                                            <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">Planned</FilterRadio>
                                             <strong className="filter__roadmap-item-value">2</strong>
                                         </li>
                                         <li className="filter__roadmap-item">
-                                            <p className="filter__roadmap-item-text">In-Progress</p>
+                                            <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">In-Progress</FilterRadio>
                                             <strong className="filter__roadmap-item-value">3</strong>
                                         </li>
                                         <li className="filter__roadmap-item">
-                                            <p className="filter__roadmap-item-text">Live</p>
+                                            <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">Live</FilterRadio>
                                             <strong className="filter__roadmap-item-value">1</strong>
                                         </li>
                                     </ul>
+
+                                    
                                 </div>
 
                             </div>

@@ -3,7 +3,6 @@
 .main__filter-info {
     width: 255px;
     height: 137px;
-
     background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
     ;
@@ -63,8 +62,6 @@
 }
 
 .filter__span {
-    width: 100%;
-    height: 100%;
     padding: 5px 16px 6px 16px;
     font-family: "Jost", sans-serif;
     background-color: #f2f4ff;
@@ -166,10 +163,15 @@
     background-color: #62BCFA;
 }
 
-.filter__roadmap-item-text {
-    margin: 0;
-    padding: 0;
-    @include text (16px, 400, 23px);
-    color: #647196;
+
+.filter__roadmap-item-label {
     margin-right: auto;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.filter__roadmap-radio:checked + .filter__roadmap-span {
+    font-weight: bold;
 }
