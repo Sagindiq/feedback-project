@@ -4,6 +4,7 @@ import Header from "../header/header";
 import FilterRadio from "../filter-radio/filter-radio";
 import "./main.scss";
 import "./filter.scss"
+import EmptyFeedback from "../empty-feedback/empty-feedback";
 
 const Main = () => {
     
@@ -59,6 +60,8 @@ const Main = () => {
 
                 <div className="main__page">
                     <Header />
+
+                    <EmptyFeedback />
                 </div>
         </div>
         </div>

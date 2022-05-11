@@ -1,0 +1,26 @@
+@import "../../sass/mixins";
+
+.empty-feedback {
+    margin-top: 24px;
+    width: 825px;
+    text-align: center;
+}
+
+.empty-feedback__img {
+    margin-top: 135px;
+    margin-bottom: 53px;
+}
+
+.empty-feedback__title {
+    @include text (24, bold, 34px);
+    color: #3A4374;
+    letter-spacing: -0.333333px;
+}
+
+.empty-feedback__description {
+    @include text (16px, 400, 23px);
+    color: #647196;
+    width: 410px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+}

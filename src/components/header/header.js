@@ -1,9 +1,14 @@
 import "./header.scss";
 import HeaderLogo from "../../assets/img/lamp.png";
 import HeaderSortBtnImg from "../../assets/img/down-vector.svg";
+import { Children, useRef, useState } from "react";
+import Button from "../buttons/button";
 const Header = () => {
+    const [className, setClassName] = useState();
 
-    
+    const headerSortBtn = () => {
+
+    }
 
     return (
         <>
@@ -13,10 +18,12 @@ const Header = () => {
 
             <strong className="header__suggestion">6 Suggestion</strong>
             
-            <button className="header__sort-btn">
-                <p className="header__sort-btn-text"><span>Sort by:</span>Null</p>
+            <button className="header__sort-btn" onClick={headerSortBtn}>
+                <p className="header__sort-btn-text">Sort by: <span>Most Upvotes</span></p>
                 <img src={HeaderSortBtnImg} alt="header sort button img" />
             </button>
+
+            <Button className="add-feedback-btn header__add-feedback-btn" >+ Add Feedback</Button>
             
             </div>
 
