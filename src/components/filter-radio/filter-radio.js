@@ -1,6 +1,4 @@
 import Features from "../feature/feature";
-import "../../sass/_general.scss"
-// import "./filter-radio.scss"
 
 const FilterRadio = (props) => {
     const {spanCName, labelcname, children, ...prop} = props;
