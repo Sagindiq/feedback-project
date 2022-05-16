@@ -1,19 +1,19 @@
 @import "../../sass/mixins";
 
-.feedback__list {
+.feedback__posts {
     @include reset-list;
     margin-top: 24px;
     margin-bottom: -20px;
 }
 
-.feedback__item {
+.feedback__post {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.feedback__item-container {
+.feedback__post-container {
     width: 761px;
     padding: 28px 32px;
     margin: 0 auto;
@@ -37,18 +37,21 @@
     color: #fff;
 }
 
-.feedback__upvote-btn--active  .feedback__upvote-number {
-    color: #fff;
 
-    & .feedback__upvote-image {
-        fill: #fff;
-    }
+.feedback__upvote-btn--active .feedback__upvote-number {
+    color: #fff;
 }
 
 .feedback__upvote-image {
     margin: 0;
-    padding: 14px 15.67px 0 16.33px;
+    margin: 14px 15.67px 0 16.33px;
     margin-bottom: 8px;
+}
+
+.feedback__upvote-image:hover {
+    color: #4661E6;
+    stroke: #4661E6;
+    fill: #4661E6;
 }
 
 .feedback__upvote-number {
@@ -58,6 +61,7 @@
     @include text (13px, 700, 19px);
     color: #3A4374;
 }
+
 
 .feedback__title {
     @include text (18px, 700, 26px);

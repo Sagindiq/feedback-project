@@ -1,19 +1,36 @@
-import selections from "./selections-data";
+import { useState } from "react";
 
-const HeaderSortModal = () => {
+const HeaderSortModal = ({ isModal }) => {
+    
+    const selections = [
+       "Most Upvotes",
+       "Least Upvotes",
+       "Most Comments",
+       "Least Comments"
+    ]
+    const [className, setClassName] = useState("sort-modal--active");
 
-    console.log(selections);
+    const HandleSortBtnClick = (() => {
+        setClassName("")
+    })
 
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
-
+    
     return (
-        <div className="sort-modal">
-            <select name="sort-modal" id="sort-modal">
-                <option value="most-upvotes">Most Upvotes</option>
-                <option value=""></option>
-            </select>
+        <div className={`sort-modal ${isModal}`}>
+            <ul className="sort-modal__list">
+                {
+                selections.map((option) => {
+
+                    return (
+
+                        <li key={option} className="sort-modal__item">
+                            <button key={option} onClick={HandleSortBtnClick} className="filter__option-btn">{option}</button>
+                        </li>
+
+                    );
+                })
+            }
+            </ul>
         </div>
     );
 }

@@ -1,15 +1,54 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { PostContext } from "../../App";
 import FilterRadio from "../filter-radio/filter-radio";
 import "./filter.scss";
 const Filter = () => {
+    
+    const [ status, setStatus ] = useState({
+        suggestion: 0,
+        planned: 0,
+        inProgress: 0,
+        live: 0
+  });
+    
+    const {PostArray} = useContext(PostContext);
+    
+    useEffect(() => {
 
+        const statusCollection = {...status}
+    PostArray.productRequests.forEach(post => {
+        switch (post.status) {
+
+            case "suggestion":
+                statusCollection.suggestion++
+                break;
+
+            case "planned":
+                statusCollection.planned++
+                break;
+                
+            case "in-progress":
+                statusCollection.inProgress++
+                break;
+
+            case "live":
+                statusCollection.live++
+                break;
+        
+            default:
+                break;
+        }
+    });
+
+    setStatus(statusCollection);
+
+    }, [])
+
+    
     return (
         <>
-        <div className="main__filter">
-                    <div className="main__filter-info">
-                        <h2>Frontend Mentor</h2>
-                        <p>Feedback Board</p>
-                    </div>
+        <form className="main__filter">
 
                         <div className="main__filter-selections">
                             <div className="main__filter-content">
@@ -32,17 +71,16 @@ const Filter = () => {
                                     </div>
                                     <ul className="filter__roadmap-list">
                                         <li className="filter__roadmap-item">
-                                            {/* <p className="filter__roadmap-item-text">Planned</p> */}
                                             <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">Planned</FilterRadio>
-                                            <strong className="filter__roadmap-item-value">2</strong>
+                                            <strong className="filter__roadmap-item-value">{status.planned}</strong>
                                         </li>
                                         <li className="filter__roadmap-item">
                                             <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">In-Progress</FilterRadio>
-                                            <strong className="filter__roadmap-item-value">3</strong>
+                                            <strong className="filter__roadmap-item-value">{status.inProgress}</strong>
                                         </li>
                                         <li className="filter__roadmap-item">
                                             <FilterRadio className="filter__roadmap-radio visually-hidden" name="roadmap-radio" labelcname="filter__roadmap-item-label" spanCName="filter__roadmap-span">Live</FilterRadio>
-                                            <strong className="filter__roadmap-item-value">1</strong>
+                                            <strong className="filter__roadmap-item-value">{status.live}</strong>
                                         </li>
                                     </ul>
 
@@ -50,7 +88,7 @@ const Filter = () => {
                                 </div>
 
                             </div>
-                </div>
+                </form>
         </>
     );
 }

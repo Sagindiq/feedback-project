@@ -2,8 +2,10 @@ import Header from "../header/header";
 import "./main.scss";
 import EmptyFeedback from "../empty-feedback/empty-feedback";
 import Filter from "../filter/filter";
-import { useEffect, useState } from "react";
-import Feedbacks from "../feedbacks/feedbacks";
+import { useContext, useEffect, useState } from "react";
+import MainIntro from "../main-intro/main-intro";
+import { PostContext } from "../../App";
+import FeedbackPosts from "../feedback-posts/feedback-posts";
 
 const Main = () => {
 
@@ -11,19 +13,21 @@ const Main = () => {
 
     const [posts, setPost] = useState([]);
 
-        
+    const { PostArray } = useContext(PostContext);
     
     return (
         <main className="main">
         <div className="main__container">
 
-                
-                <Filter />
+                <div>
+                <MainIntro />
+                <Filter FeedbackPosts={PostArray} />
+                </div>
 
                 <div className="main__page">
                     <Header />
                     {/* <EmptyFeedback /> */}
-                    <Feedbacks />
+                    {PostArray.productRequests.length ? <FeedbackPosts /> : <EmptyFeedback />}
 
                 </div>
         </div>
