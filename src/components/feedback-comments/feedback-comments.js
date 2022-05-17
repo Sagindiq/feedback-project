@@ -10,11 +10,10 @@ const FeedbackComments = (({currenComment}) => {
                 currenComment.map((comment) => {
                     const {id, content, user} = comment;
                     const { image, name, username} = user;
-                    console.log(name);
                     
                     return (
 
-                    <div className="feedback__comment-person">
+                    <div key={id} className="feedback__comment-person">
                         <img className="feedback__comment-person-img" src={image} alt="user" />
 
                         <div className="feedback__comment-info">

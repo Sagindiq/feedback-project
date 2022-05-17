@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { PostContext } from "../../App";
 import Features from "../feature/feature";
 import FeedbackComments from "../feedback-comments/feedback-comments";
+import FeedbackItems from "../feedback-post-array/feedback-postArray";
 import "./feedback-details.scss";
 
 const FeedbackDetails = (() => {
@@ -15,7 +16,13 @@ const FeedbackDetails = (() => {
         return +fItem.id == FeedbackParams.id;
     });
 
-    const { id, title, upvotes, category, description, comments} = PostArray.productRequests[feedbackIndex];
+    const feedbackItem = PostArray.productRequests.find((feed) => {
+        return +feed.id === FeedbackParams.id;
+    })
+
+    console.log(feedbackItem);
+
+    const { id, title, upvotes, category, status, description, comments} = PostArray.productRequests[feedbackIndex];
 
     // // const [feedbackItem, setItem] = useState();
     const [count, setCount] = useState(0);
@@ -54,7 +61,7 @@ const FeedbackDetails = (() => {
 
         <div  className="feedback__container">
 
-                <div className="feedback__post" data-id={id}>
+                {/* <div className="feedback__post" data-id={id}>
                     
                      <button className={`feedback__upvote-btn ${count == 1 ? "feedback__upvote-btn--active" : ""}`} onClick={HandleUpvoteClick}>
                       <svg className="feedback__upvote-image" width="11" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1.334 6 4-4 4 4" stroke={upvoteColor} /></svg>
@@ -74,7 +81,9 @@ const FeedbackDetails = (() => {
                         <p className="feedback__comments-count">{commentCount}</p>
                     </div>
 
-                </div>
+                </div> */}
+                
+                <FeedbackItems id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={false} />
 
             <FeedbackComments commentCount={commentCount} currenComment={PostArray.productRequests[feedbackIndex].comments} />
         </div>

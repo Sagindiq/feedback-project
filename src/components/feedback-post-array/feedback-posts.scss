@@ -1,19 +1,19 @@
 @import "../../sass/mixins";
 
-.main__posts {
+.feedback__posts {
     @include reset-list;
     margin-top: 24px;
     margin-bottom: -20px;
 }
 
-.main__post {
+.feedback__post {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.main__post-container {
+.feedback__post-container {
     width: 761px;
     padding: 28px 32px;
     margin: 0 auto;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.main__upvote-btn {
+.feedback__upvote-btn {
     @include reset-btn;
     background-color: #F2F4FE;
     border-radius: 10px;
@@ -36,19 +36,15 @@
 
 
 
-.main__upvote-image {
+.feedback__upvote-image {
     margin: 0;
     margin: 14px 15.67px 0 16.33px;
     margin-bottom: 8px;
 }
 
-.main__upvote-image:hover {
-    color: #4661E6;
-    stroke: #4661E6;
-    fill: #4661E6;
-}
 
-.main__upvote-number {
+
+.feedback__upvote-number {
     margin: 0;
     padding: 0;
     margin-bottom: 8px;
@@ -56,40 +52,47 @@
     color: #3A4374;
 }
 
-.main__upvote-btn--active {
+.feedback__upvote-btn--active {
     background-color: #4661E6;
     color: #fff;
 }
 
-.main__upvote-btn--active * {
+.feedback__upvote-btn--active * {
     color: #fff;
 }
 
-.main__upvote-btn--active:hover * {
+.feedback__upvote-btn--active:hover * {
     background-color: #CFD7FF;
     color: #3A4374;
 }
 
-.main__title {
+.feedback__upvote-image {
+    stroke: {
+        fill: red;
+        color: red;
+    };
+}
+
+.feedback__title {
     @include text (18px, 700, 26px);
     color: #3A4374;
     margin-bottom: 4px;
 }
 
-.main__description {
+.feedback__description {
     @include text (16px, 400, 23px);
     color: #647196;
     margin-bottom: 12px;
 }
 
-.main__category {
+.feedback__category {
     padding: 5px 16px 6px 16px;
     background-color: #F2F4FF;
     color: #4661E6;
     border-radius: 10px;
 }
 
-.main__comments {
+.feedback__comments {
     width: 44px;
     margin-right: 0;
     margin-left: auto;

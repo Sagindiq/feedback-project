@@ -22,7 +22,7 @@ const FeedbackPosts = () => {
 
                     return (
                         <>
-                        <FeedbackItems id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} feedbackItem={feedbackItem} />
+                        <FeedbackItems id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={true} />
                         </>
                     );
                 })
