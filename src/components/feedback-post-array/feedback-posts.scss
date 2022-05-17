@@ -1,19 +1,19 @@
 @import "../../sass/mixins";
 
-.feedback__posts {
+.main__posts {
     @include reset-list;
     margin-top: 24px;
     margin-bottom: -20px;
 }
 
-.feedback__post {
+.main__post {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.feedback__post-container {
+.main__post-container {
     width: 761px;
     padding: 28px 32px;
     margin: 0 auto;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.feedback__upvote-btn {
+.main__upvote-btn {
     @include reset-btn;
     background-color: #F2F4FE;
     border-radius: 10px;
@@ -29,32 +29,26 @@
 
     &:hover {
         background-color: #CFD7FF;
+        color: #3A4374;
     }
 }
 
-.feedback__upvote-btn--active {
-    background-color: #4661E6;
-    color: #fff;
-}
 
 
-.feedback__upvote-btn--active .feedback__upvote-number {
-    color: #fff;
-}
 
-.feedback__upvote-image {
+.main__upvote-image {
     margin: 0;
     margin: 14px 15.67px 0 16.33px;
     margin-bottom: 8px;
 }
 
-.feedback__upvote-image:hover {
+.main__upvote-image:hover {
     color: #4661E6;
     stroke: #4661E6;
     fill: #4661E6;
 }
 
-.feedback__upvote-number {
+.main__upvote-number {
     margin: 0;
     padding: 0;
     margin-bottom: 8px;
@@ -62,27 +56,40 @@
     color: #3A4374;
 }
 
+.main__upvote-btn--active {
+    background-color: #4661E6;
+    color: #fff;
+}
 
-.feedback__title {
+.main__upvote-btn--active * {
+    color: #fff;
+}
+
+.main__upvote-btn--active:hover * {
+    background-color: #CFD7FF;
+    color: #3A4374;
+}
+
+.main__title {
     @include text (18px, 700, 26px);
     color: #3A4374;
     margin-bottom: 4px;
 }
 
-.feedback__description {
+.main__description {
     @include text (16px, 400, 23px);
     color: #647196;
     margin-bottom: 12px;
 }
 
-.feedback__category {
+.main__category {
     padding: 5px 16px 6px 16px;
     background-color: #F2F4FF;
     color: #4661E6;
     border-radius: 10px;
 }
 
-.feedback__comments {
+.main__comments {
     width: 44px;
     margin-right: 0;
     margin-left: auto;
