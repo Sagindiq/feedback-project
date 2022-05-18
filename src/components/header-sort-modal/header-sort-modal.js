@@ -82,7 +82,7 @@ const HeaderSortModal = (() => {
                             return (
 
                                 <HeaderSortBtn key={option.id} option={option} children={option.name} onClick={SortModalChange} data-name={option.name} checkedOption={lastOption} />
-                                // <h1>salom</h1>
+                                
 
                             );
                         })

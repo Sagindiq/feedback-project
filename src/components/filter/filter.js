@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { PostContext } from "../../App";
+import { useData } from "../contexts/data";
 import FilterRadio from "../filter-radio/filter-radio";
 import "./filter.scss";
 const Filter = () => {
@@ -11,13 +11,13 @@ const Filter = () => {
         inProgress: 0,
         live: 0
   });
-    
-    const {PostArray} = useContext(PostContext);
+
+    const {data} = useData();
     
     useEffect(() => {
 
         const statusCollection = {...status}
-    PostArray.productRequests.forEach(post => {
+    data.productRequests.forEach(post => {
         switch (post.status) {
 
             case "suggestion":

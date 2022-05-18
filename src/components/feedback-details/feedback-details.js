@@ -1,6 +1,6 @@
-import { useContext, useRef, useState, useEffect } from "react";
+import {  useRef, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { PostContext } from "../../App";
+import { useData } from "../contexts/data";
 import Features from "../feature/feature";
 import FeedbackComments from "../feedback-comments/feedback-comments";
 import FeedbackItems from "../feedback-post-array/feedback-postArray";
@@ -10,19 +10,19 @@ const FeedbackDetails = (() => {
 
     const FeedbackParams = useParams();
     
-    const { PostArray } = useContext(PostContext);
+    const { data } = useData();
 
-    const feedbackIndex = PostArray.productRequests.findIndex((fItem) => {
+    const feedbackIndex = data.productRequests.findIndex((fItem) => {
         return +fItem.id == FeedbackParams.id;
     });
 
-    const feedbackItem = PostArray.productRequests.find((feed) => {
+    const feedbackItem = data.productRequests.find((feed) => {
         return +feed.id === FeedbackParams.id;
     })
 
     console.log(feedbackItem);
 
-    const { id, title, upvotes, category, status, description, comments} = PostArray.productRequests[feedbackIndex];
+    const { id, title, upvotes, category, status, description, comments} = data.productRequests[feedbackIndex];
 
     // // const [feedbackItem, setItem] = useState();
     const [count, setCount] = useState(0);
@@ -85,7 +85,7 @@ const FeedbackDetails = (() => {
                 
                 <FeedbackItems id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={false} />
 
-            <FeedbackComments commentCount={commentCount} currenComment={PostArray.productRequests[feedbackIndex].comments} />
+            <FeedbackComments commentCount={commentCount} currenComment={data.productRequests[feedbackIndex].comments} />
         </div>
 
     )

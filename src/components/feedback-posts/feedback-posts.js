@@ -1,13 +1,10 @@
-import { useContext } from "react";
-import { PostContext } from "../../App";
-
+import { useData } from "../contexts/data";
 import FeedbackItems from "../feedback-post-array/feedback-postArray";
 
 const FeedbackPosts = () => {
 
 
-    const { PostArray } = useContext(PostContext);
-
+    const { data } = useData();
 
         
     return (
@@ -16,13 +13,13 @@ const FeedbackPosts = () => {
         <article className="feedback__posts">
 
             {
-                PostArray.productRequests.map((feedbackItem) => {
+                data.productRequests.map((feedbackItem) => {
                     const {id, title, category, upvotes, status,  description, comments} = feedbackItem;
                     
 
                     return (
                         <>
-                        <FeedbackItems id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={true} />
+                        <FeedbackItems key={id} id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={true} />
                         </>
                     );
                 })

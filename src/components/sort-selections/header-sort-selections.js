@@ -2,12 +2,12 @@ import { useState } from "react";
 
 const HeaderSortModal = ({ isModal }) => {
     
-    const selections = [
-       "Most Upvotes",
-       "Least Upvotes",
-       "Most Comments",
-       "Least Comments"
-    ]
+    // const selections = [
+    //    "Most Upvotes",
+    //    "Least Upvotes",
+    //    "Most Comments",
+    //    "Least Comments"
+    // ]
     const [className, setClassName] = useState("sort-modal--active");
 
     const HandleSortBtnClick = (() => {

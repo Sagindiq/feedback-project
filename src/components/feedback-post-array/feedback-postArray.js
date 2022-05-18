@@ -59,7 +59,7 @@ const FeedbackItems = ({id, title, description, category, upvotes, comments, lin
     
     return (
 
-        <div key={id}  className="feedback__post">
+        <div  className="feedback__post">
 
                 <div className="feedback__post-container">
                     

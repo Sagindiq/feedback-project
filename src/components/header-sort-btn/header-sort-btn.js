@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import CheckedSort from "../../assets/img/checked.svg";
 
 const HeaderSortBtn = (props) => {
