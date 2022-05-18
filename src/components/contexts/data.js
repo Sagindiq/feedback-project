@@ -17,6 +17,7 @@ const PostProvider = ({ children }) => {
             productRequests: data.productRequests.map(product => ({
               ...product,
               isUpvoted: false,
+              upvoteColor: "#4661E6"
             })),
           });
         });

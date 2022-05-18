@@ -1,17 +1,21 @@
 import upvoteImg from "../../assets/img/upvote-vector.svg"
 import Features from "../feature/feature";
-import { useContext, useEffect, useRef, useState } from "react";
-import "./feedback-posts.scss";
+import { useEffect, useRef, useState } from "react";
+import "./postArray.scss";
 import { Link } from "react-router-dom";
+import { useData } from "../contexts/data";
 
 
-const FeedbackItems = ({id, title, description, category, upvotes, comments, link}) => {
+const FeedbackItems = (props) => {
+    const { id, title, description, category, upvotes, comments, link, isUpvoted, upvoteColor } = props
 
-    const [feedbackItem, setItem] = useState();
-    const [count, setCount] = useState(0);
-    const [upvote, setUpvote] = useState();
-    const upvoteRef = useRef();
-    const [upvoteColor, setUpvoteColor] = useState("#4661E6");
+    const {data , setData} = useData();
+    
+    const postIndex = data.productRequests.findIndex((post) => {
+        return +post.id === id;
+    });
+
+    const postObj = data.productRequests.find((post) => +post.id === id);
     const [commentsArray, setComment] = useState([]);
     const commentCount = comments ? comments.length : 0;
 
@@ -20,21 +24,44 @@ const FeedbackItems = ({id, title, description, category, upvotes, comments, lin
     const HandleUpvoteClick = () => {
         
 
-        if (count == 0) {
+        if (!isUpvoted) {
 
-            setCount(1);
-            setUpvote(upvote + 1);
-            setUpvoteColor("#fff");
+            setData({
+                ...data,
+                productRequests: [
+                    ...data.productRequests.slice(0, postIndex),
+                    {
+                        ...postObj,
+                        isUpvoted: true,
+                        upvotes: upvotes + 1,
+                        upvoteColor: "#fff"
+                        
+                    },
+                    ...data.productRequests.slice(postIndex + 1)
+                ]
+            })
 
-        } else if (count == 1) {
+        } else if (isUpvoted) {
 
-            setCount(0)
-            setUpvote(upvote - 1)
-            setUpvoteColor("#4661E6");
+            setData({
+                ...data,
+                productRequests: [
+                    ...data.productRequests.slice(0, postIndex),
+                    {
+                        ...postObj,
+                        isUpvoted: false,
+                        upvotes: upvotes - 1,
+                        upvoteColor: "#4661E6"
+                    },
+                    ...data.productRequests.slice(postIndex + 1)
+                ]
+            })
 
         }
 
     }
+
+    
     
     useEffect(() => {
         setComment(commentsArray + comments)
@@ -63,11 +90,11 @@ const FeedbackItems = ({id, title, description, category, upvotes, comments, lin
 
                 <div className="feedback__post-container">
                     
-                    <button className={`feedback__upvote-btn ${count == 1 ? "feedback__upvote-btn--active" : ""}`} data-id={id} onClick={HandleUpvoteClick}>
+                    <button className={`feedback__upvote-btn ${isUpvoted ? "feedback__upvote-btn--active" : ""}`} data-id={id} onClick={HandleUpvoteClick}>
                         {/* <img className="feedback__upvote-image" src={upvoteImg} alt="feedback upvote img" /> */}
                         <svg className="feedback__upvote-image" width="11" height="7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1.334 6 4-4 4 4" stroke={upvoteColor} /></svg>
 
-                        <p className="feedback__upvote-number">{upvotes + count}</p>
+                        <p className="feedback__upvote-number">{upvotes}</p>
                     </button>
 
                     <div className="feedback__info">
