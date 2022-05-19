@@ -1,0 +1,64 @@
+@import "../../sass/mixins";
+
+.selector-modal {
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px -7px rgba(55, 63, 104, 0.350492);
+    border-radius: 10px;
+}
+
+.selector-modal__list {
+    @include reset-list;
+    // width: 255px;
+    width: 100%;
+}
+
+.selector-modal__item::after {
+    width: 100%;
+    height: 1.5px;
+    display: block;
+    background: #3A4374;
+    mix-blend-mode: normal;
+    opacity: 0.15;
+    content: '';
+}
+
+
+.selector-modal__label {
+    @include text (16px, 400, 23px);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 12px 24px;
+    width: 100%;
+
+    color: #647196;
+    position: relative;
+
+    &:hover {
+        color: #AD1FEA;
+        cursor: pointer;
+    }
+}
+
+.selector-modal__selected-mark {
+    display: block;
+    width: 11px;
+    height: 8px;
+    margin-left: auto;
+    background: url(../../assets/img/checked.svg) no-repeat center center;
+    background-size: 0 0;
+}
+
+.selector-modal__input:checked + .selector-modal__selected-mark {
+    background-size: 100% 100%;
+}
+
+// .modal--active {
+//     display: flex;
+//     align-items: baseline;
+// }

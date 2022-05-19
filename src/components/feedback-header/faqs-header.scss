@@ -9,18 +9,6 @@
     justify-content: space-between;
 }
 
-.faqs__header-back-btn {
-    width: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    & strong {
-        @include text (14px, 700, 20px);
-        color: #647196;
-    }
-}
-
 .faqs__header-edit-btn {
     @include reset-btn;
     @include text (14px, 700, 20px);

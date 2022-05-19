@@ -1,94 +1,109 @@
 import { useState } from "react";
 import HeaderSortBtnImg from "../../assets/img/down-vector.svg";
-import HeaderSortBtn from "../header-sort-btn/header-sort-btn";
+import { useData } from "../contexts/data";
+import RadioSelect from "../radio-component/radio-component";
+import "./header-sort-modal.scss"
 
 
 
 const HeaderSortModal = (() => {
 
     const [className, setClassName] = useState();
-    const [isSelectOpen, setSelect] = useState(false);
-    const [lastOption, setOption] = useState("Most Upvotes");
+    // const [isSelectOpen, setSelectOpen] = useState(false);
+    const [lastOption, setOption] = useState("1");
     const [isModal, setModal] = useState("");
-    // const [isChecked, setChecked] = useState("");
+    const {data, setData} = useData();
 
     const selections = [
             {
                 id: 1,
-                name: "Most Upvotes"
+                text: "Most Upvotes"
             },
             {
                 id:2,
-                name: "Least Upvotes"
+                text: "Least Upvotes"
             },
             {
                 id: 3,
-                name: "Most Comments"
+                text: "Most Comments"
             },
             {
                 id: 4,
-                name: "Least Comments"
+                text: "Least Comments"
             }
-    ]
+        ]
 
-    const HandleSortBtnClick = () => {
+    const isTrue = () => {
 
-        if (isSelectOpen == false) {
-            setSelect(true);
-            setClassName("header__sort-btn--active");
-            setModal("sort-modal--active")
+        // setSelectOpen((selectOpen) => {
+        //     return !selectOpen;
+        // })
 
-        } else if (isSelectOpen == true) {
-            setSelect(false)
-            setClassName("");
-            setModal("")
-        }
-    }
+        setClassName((className) => {
+            return className == "header__sort-btn--active" ? "" : "header__sort-btn--active";
+        })
 
-    const SortModalChange = (evt) => {
-
-        const elementName = evt.target.dataset.name;
-        const elementId = +evt.target.dataset.id;
-        const elements = evt.target.elements;
-
-        if (isSelectOpen == false) {
-            setSelect(true);
-            setClassName("header__sort-btn--active");
-            setModal("sort-modal--active");
-            
-            
-        } else if (isSelectOpen == true) {
-            setSelect(false)
-            setClassName("");
-            setModal("")
-            setOption(elementName)
-
-        }
+        setModal((modal) => {
+            return modal == "header-modal--active" ? "" : "header-modal--active";
+        })
 
     }
     
+    const HandleSortBtnClick = () => {
+
+        isTrue()
+
+    }
+
+    const SortModalChange = ((evt) => {
+        const lastOption = evt.target.dataset.id;
+        setOption(lastOption);
+        
+        // isTrue()
+
+        console.log(evt.target.dataset.id);
+        console.log(lastOption);
+
+        setData(
+            {
+                ...data,
+                productRequests: data.productRequests.sort((a, b) => {
+                    switch (lastOption) {
+                        case "1":
+                            return b.upvotes - a.upvotes;
+                        case "2":
+                            return a.upvotes - b.upvotes;
+                        case "3": 
+                            return (b.comments?.length ) - a.comments?.length  
+                        case "4": 
+                            return (a.comments?.length || 0) - (b.comments?.length || 0)  
+                    
+                        default:
+                            return 0;
+                    }
+                })
+            }
+        )
+        
+    })
+
+    const CurrentOption = () => selections.find(option => option.id == lastOption).text;
+
     return (
         <div>
             <button className={`header__sort-btn ${className }`} onClick={HandleSortBtnClick}>
-                    <p className="header__sort-btn-text">Sort by: <span>{lastOption}</span></p>
+                    <p className="header__sort-btn-text">Sort by: <span><CurrentOption /></span></p>
                     <img className="header__sort-btn-img" src={HeaderSortBtnImg} alt="header sort button img" />
             </button>
 
-            <div className={`sort-modal ${isModal}`}>
-                <ul className="sort-modal__list">
-                    {
-                        selections.map((option) => {
-
-                            return (
-
-                                <HeaderSortBtn key={option.id} option={option} children={option.name} onClick={SortModalChange} data-name={option.name} checkedOption={lastOption} />
-                                
-
-                            );
-                        })
-                    }
-                </ul>
-            </div>
+            <RadioSelect
+            selections={selections}
+            className={"header"}
+            modalChange={SortModalChange}
+            defaultValue={lastOption}
+            isModal={isModal}
+            width="255px"
+            />
 
         </div>
     );

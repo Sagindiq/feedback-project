@@ -1,8 +1,8 @@
 import "./header.scss";
 import HeaderLogo from "../../assets/img/lamp.png";
-import Button from "../buttons/button";
 import HeaderSortModal from "../header-sort-modal/header-sort-modal";
 import { useData } from "../contexts/data";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
     const { data } = useData();
     return (
         <>
-        <header>
+        <header className="header">
             <div className="header__container">
                 <img className="header__img" src={HeaderLogo} />
 
@@ -18,7 +18,7 @@ const Header = () => {
             
             <HeaderSortModal />
         
-            <Button className="add-feedback-btn header__add-feedback-btn" >+ Add Feedback</Button>
+            <Link to="/add" className="add-feedback-btn header__add-feedback-btn" >+ Add Feedback </Link>
             
             </div>
 

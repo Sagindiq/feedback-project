@@ -28,7 +28,7 @@ const FeedbackDetails = (() => {
 
         <div  className="feedback__container">
                 
-                <FeedbackItems {...feedbackItem} link={false} />
+            <FeedbackItems {...feedbackItem} link={false} />
 
             <FeedbackComments commentCount={commentCount} currenComment={data.productRequests[feedbackIndex].comments} />
 

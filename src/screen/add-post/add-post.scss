@@ -1,0 +1,169 @@
+@import "../../sass/mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.add-post__container {
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.add-post__modal {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 45px;
+    position: relative;
+}
+
+.add-post__mark {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #E84D70 0%, #A337F6 53.09%, #28A7ED 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: 62px;
+}
+
+.add-post__modal-content {
+    padding: 52px 42px 40px 42px;
+}
+
+.add-post__title {
+    @include text (24px, 700, 35px);
+    color: #3A4374;
+    margin-bottom: 20px;
+}
+
+.add-post__label-title {
+    @include text (14px, 700, 20px);
+    color: #3A4374;
+    margin-bottom: 2px;
+}
+
+.add-post__label-desc {
+    @include text (14px, 400, 20px);
+    margin-bottom: 16px;
+}
+
+.add-post__title-input {
+    border: none;
+    background-color: #F7F8FD;
+    border-radius: 5px;
+    width: 100%;
+    height: 48px;
+    padding: 0 20px;
+    margin-bottom: 18px;
+
+    &:focus {
+    outline: 1px solid #4661E6;
+    color: #3A4374;
+    }
+
+    &:hover {
+    outline: 1px solid #4661E6;
+    }
+}
+
+
+.add-post__category-btn {
+    @include reset-btn;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 24px;
+    background-color: #F7F8FD;
+    border-radius: 5px;
+    margin-bottom: 24px;
+
+    &:hover {
+    outline: 1px solid #4661E6;
+    }
+
+    &::after {
+        display: inline-block;
+        width: 8px;
+        height: 4px;
+        background: url(../../assets/img/add-post-category.svg) center center;
+        content: '';
+    }
+}
+
+.category-btn--active::after {
+    transform: rotate(180deg);
+}
+
+.add-post__cancel-btn--active {
+
+    &::after {
+        transform: rotate(180deg);
+    }
+}
+
+.add-post__details-textarea {
+    width: 100%;
+    height: 96px;
+    text-align: justify;
+    border: none;
+    background-color: #F7F8FD;
+    padding: 20px 24px;
+    resize: none;
+    margin-bottom: 22px;
+
+    &:focus {
+        outline: #4661E6;
+        color: #3A4374;
+    }
+}
+
+.add-post__cancel-btn {
+    @include reset-btn;
+    @include text (14px, 700, 20px);
+    color: #F2F4FE;
+    padding: 12.5px 24px 11.5px;
+    background-color: #3A4374;
+    border-radius: 10px;
+    margin-left: 203px;
+    margin-right: 16px;
+
+    &:hover {
+        background-color: #656EA3;
+    }
+}
+
+.add-post__submit-btn {
+    @include reset-btn;
+    @include text (14px, 700, 20px);
+    color: #F2F4FE;
+    padding: 12.5px 24px 11.5px;
+    background-color: #AD1FEA;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #C75AF6;
+    }
+}
+
+.category-modal {
+    display: none;
+}
+
+.category-modal--active {
+    display: flex;
+}
+
+.empty {
+    border: 1px solid red;
+}

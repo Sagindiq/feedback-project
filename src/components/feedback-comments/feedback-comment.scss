@@ -26,10 +26,10 @@
         margin-bottom: 32px;
     }
     
-    &:last-child::after {
-        display: none;
-        margin-bottom: 32px;
-    }
+    // &:last-child::after {
+    //     display: none;
+    //     margin-bottom: 32px;
+    // }
 }
 
 .feedback__comment-info {
@@ -61,6 +61,10 @@
     @include text (14px, 700, 20px);
     color: #3A4374;
     letter-spacing: -0.194444px;
+}
+
+.feedback__comment-description {
+    margin-bottom: 32px;
 }
 
 .feedback__comment-reply-btn {

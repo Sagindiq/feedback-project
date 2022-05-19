@@ -22,6 +22,12 @@
     align-items: center;
 }
 
+.feedback__post-container {
+    width: 666px;
+    margin: 0;
+    padding: 0;
+}
+
 .feedback__upvote-btn {
     @include reset-btn;
     background-color: #F2F4FE;

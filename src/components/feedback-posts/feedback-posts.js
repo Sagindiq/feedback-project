@@ -20,7 +20,9 @@ const FeedbackPosts = () => {
                     return (
                         <>
                         {/* <FeedbackItems key={id} id={id} title={title} category={category} upvotes={upvotes} status={status} description={description} comments={comments} link={true} /> */}
-                        <FeedbackItems key={feedbackItem.id} {...feedbackItem} link={true} />
+                        <div key={feedbackItem} className="main__posts">
+                            <FeedbackItems {...feedbackItem} link={true} />
+                        </div>
                         </>
                     );
                 })
