@@ -1,0 +1,59 @@
+@import "../../sass/mixins";
+
+// .feedback__posts {
+//     @include reset-list;
+//     margin-top: 24px;
+//     margin-bottom: -20px;
+// }
+
+.feedback__container {
+    width: 730px;
+    margin: 0 auto;
+}
+
+
+.feedback__post {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 28px 32px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.feedback__post-container {
+    width: 666px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.feedback__category {
+    padding: 5px 16px 6px 16px;
+    background-color: #F2F4FF;
+    color: #4661E6;
+    border-radius: 10px;
+}
+
+.feedback__comments {
+    width: 44px;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback__comment {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.feedback__comment-title {
+    @include text (18px, 700, 26px);
+    color: #3A4374;
+    padding: 24px 0 28px 0;
+    margin: 0 34px;
+}

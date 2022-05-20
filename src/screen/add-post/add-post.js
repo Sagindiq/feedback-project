@@ -119,7 +119,6 @@ const AddPost = () => {
             // }
             
        if (!titleValue.trim()) {
-           console.log("title yoq");
            titleRef.current.focus();
             titleRef.current.className = "add-post__title-input-empty"
             titleEmpty.current.className = "title-empty--active";
@@ -127,13 +126,11 @@ const AddPost = () => {
         }
 
         if (categoryRef.current.textContent == "Select a category") {
-            console.log("category tanlanmagan");
             categoryRef.current.className = "add-post__category-btn-empty";
             categoryEmpty.current.className = "category-empty--active";
         }
         
         if (!descriptionValue.trim()) {
-            console.log("desc yo");
             textAreaRef.current.focus();
             textAreaRef.current.className = "add-post__details-textarea-empty"
             detailsEmpty.current.className = "textarea-empty--active";

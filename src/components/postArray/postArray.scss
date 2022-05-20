@@ -73,6 +73,11 @@
     };
 }
 
+.feedback__info {
+    display: block;
+    width: 761px;
+}
+
 .feedback__title {
     @include text (18px, 700, 26px);
     color: #3A4374;
@@ -81,6 +86,8 @@
 
 .feedback__description {
     @include text (16px, 400, 23px);
+    display: block;
+    overflow: hidden;
     width: 500px;
     color: #647196;
     margin-bottom: 12px;

@@ -3,7 +3,7 @@ import GoBack from "../back-btn/back-btn";
 import Button from "../buttons/button";
 import "./faqs-header.scss";
 
-const FeedbackHeader = () => {
+const FeedbackHeader = ({id}) => {
 
     return (
         <header className="faqs__header">
@@ -11,7 +11,7 @@ const FeedbackHeader = () => {
                 
                 <GoBack />
 
-            <Button className="edit-feedback-btn faqs__header-edit-btn">Edit Feedback</Button>
+            <Link to={`/edit/${id}`} className="edit-feedback-btn faqs__header-edit-btn">Edit Feedback</Link>
 
             </div>
         </header>
