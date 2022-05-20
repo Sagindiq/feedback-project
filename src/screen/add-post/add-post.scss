@@ -36,7 +36,7 @@
 }
 
 .add-post__modal-content {
-    padding: 52px 42px 40px 42px;
+    padding: 40px 42px 35px 42px;
 }
 
 .add-post__title {
@@ -48,22 +48,22 @@
 .add-post__label-title {
     @include text (14px, 700, 20px);
     color: #3A4374;
-    margin-bottom: 2px;
 }
 
 .add-post__label-desc {
     @include text (14px, 400, 20px);
-    margin-bottom: 16px;
+    margin-bottom: 6px;
 }
 
-.add-post__title-input {
+.add-post__title-input,
+.add-post__title-input-empty {
     border: none;
     background-color: #F7F8FD;
     border-radius: 5px;
     width: 100%;
     height: 48px;
     padding: 0 20px;
-    margin-bottom: 18px;
+    margin-bottom: 30px;
 
     &:focus {
     outline: 1px solid #4661E6;
@@ -75,8 +75,22 @@
     }
 }
 
+.add-post__title-input-empty {
+    outline: 1px solid red;
+}
 
-.add-post__category-btn {
+.add-post__category-btn-empty .add-post__label-title::after {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: '';
+    color: black;
+    background-color: blue;
+}
+
+
+.add-post__category-btn,
+.add-post__category-btn-empty {
     @include reset-btn;
     width: 100%;
     text-align: left;
@@ -86,7 +100,7 @@
     padding: 13px 24px;
     background-color: #F7F8FD;
     border-radius: 5px;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 
     &:hover {
     outline: 1px solid #4661E6;
@@ -101,18 +115,17 @@
     }
 }
 
+.add-post__category-btn-empty {
+    outline: 1px solid red;
+}
+
 .category-btn--active::after {
     transform: rotate(180deg);
 }
 
-.add-post__cancel-btn--active {
 
-    &::after {
-        transform: rotate(180deg);
-    }
-}
-
-.add-post__details-textarea {
+.add-post__details-textarea,
+.add-post__details-textarea-empty {
     width: 100%;
     height: 96px;
     text-align: justify;
@@ -120,13 +133,18 @@
     background-color: #F7F8FD;
     padding: 20px 24px;
     resize: none;
-    margin-bottom: 22px;
+    margin-bottom: 30px;
 
     &:focus {
         outline: #4661E6;
         color: #3A4374;
     }
 }
+
+.add-post__details-textarea-empty {
+    outline: 1px solid red;
+}
+
 
 .add-post__cancel-btn {
     @include reset-btn;
@@ -140,6 +158,13 @@
 
     &:hover {
         background-color: #656EA3;
+    }
+}
+
+.add-post__cancel-btn--active {
+
+    &::after {
+        transform: rotate(180deg);
     }
 }
 
@@ -158,12 +183,36 @@
 
 .category-modal {
     display: none;
+    top: 319px;
 }
 
 .category-modal--active {
     display: flex;
 }
 
-.empty {
-    border: 1px solid red;
+.title-empty--active,
+.category-empty--active,
+.textarea-empty--active {
+    display: block;
+    font-size: 12px;
+    color: red;
+    position: absolute;
+}
+
+.title-empty,
+.category-empty,
+.textarea-empty {
+    display: none;
+}
+
+.title-empty--active {
+    top: 190px;
+}
+
+.category-empty--active {
+    bottom: 270px;
+}
+
+.textarea-empty--active {
+    bottom: 98px;
 }

@@ -81,6 +81,7 @@
 
 .feedback__description {
     @include text (16px, 400, 23px);
+    width: 500px;
     color: #647196;
     margin-bottom: 12px;
 }

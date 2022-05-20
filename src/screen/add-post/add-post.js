@@ -46,11 +46,17 @@ const AddPost = () => {
     // const [category, setCategory] = useState("Feature");
     const [descriptionValue, setDescriptionValue] = useState("");
 
-    const [className, setClassName] = useState();
+    const [className, setClassName] = useState("");
     const [isModal, setModal] = useState("");
+
     const titleRef = useRef(null);
     const categoryRef = useRef(null);
     const textAreaRef = useRef(null);
+
+    const titleEmpty = useRef(null);
+    const categoryEmpty = useRef(null);
+    const detailsEmpty = useRef(null);
+
 
     const isTrue = () => {
 
@@ -65,20 +71,15 @@ const AddPost = () => {
     }
 
     const handleCategoryBtnClick = (evt) => {
-
-        
         isTrue();
-        
-        
+        categoryEmpty.current.className = "category-empty";
     }
     
     const categoryChange = (evt) => {
         const lastOption = +evt.target.dataset.id;
         setlastOption(lastOption);
-        
-        categoryRef.current.style = "";
-        
-    
+
+        isTrue();
     }
 
     const CurrentOption = () => selections.find(option => option.id === lastOption).text;
@@ -87,9 +88,6 @@ const AddPost = () => {
         evt.preventDefault()
         
         if (titleValue && categoryRef.current.textContent !== "Select a category" && descriptionValue) {
-            // const [emptyTitle, setEmptyTitle] = useState("add-post__title-input")
-            // setEmptyTitle(titleRef.current.className + " empty");
-            // titleRef.current.className = "add-post__title-input-empty";
 
 
             setData(
@@ -98,50 +96,69 @@ const AddPost = () => {
                 productRequests: [
                     ...data.productRequests,
                     {
-                        id: "sd"
+                        id: data.productRequests.length + 1,
+                        title: titleValue,
+                        category: CurrentOption(),
+                        upvotes: 0,
+                        status: "suggestion",
+                        description: descriptionValue,
+                        comments: []
                     }
                 ]
             }
         )
 
-        console.log("ishladi");
+        setTitleValue("");
+        setDescriptionValue("");
+        setlastOption(1);
 
-         } // else if (!titleValue || categoryRef.current.textContent == "Select a category" || !descriptionValue) {
+        navigate("/");
+
+        } // else if (!titleValue || categoryRef.current.textContent == "Select a category" || !descriptionValue) {
+        
+            // }
             
-        // }
+       if (!titleValue.trim()) {
+           console.log("title yoq");
+           titleRef.current.focus();
+            titleRef.current.className = "add-post__title-input-empty"
+            titleEmpty.current.className = "title-empty--active";
+                
+        }
 
-       if (!titleValue) {
-                console.log("title yoq");
-                titleRef.current.style = "border: 1px solid red;";
-            }
-            if (categoryRef.current.textContent == "Select a category") {
-                console.log("category tanlanmagan");
-                categoryRef.current.style = "border: 1px solid red;";
-
-            }
-            if (!descriptionValue) {
-                console.log("desc yo");
-                textAreaRef.current.style = "border: 1px solid red;";
-            } 
+        if (categoryRef.current.textContent == "Select a category") {
+            console.log("category tanlanmagan");
+            categoryRef.current.className = "add-post__category-btn-empty";
+            categoryEmpty.current.className = "category-empty--active";
+        }
+        
+        if (!descriptionValue.trim()) {
+            console.log("desc yo");
+            textAreaRef.current.focus();
+            textAreaRef.current.className = "add-post__details-textarea-empty"
+            detailsEmpty.current.className = "textarea-empty--active";
+        } 
         
     }
-
-
+    
+    
     const changeTitleValue = (evt) => {
+        
         setTitleValue(evt.target.value);
         titleRef.current.className = "add-post__title-input"
-        titleRef.current.style = "";
-
+        titleEmpty.current.className = "title-empty";
+        
     }
-
+    
     const changeDescValue = (evt) => {
+
         setDescriptionValue(evt.target.value);
         textAreaRef.current.className = "add-post__details-textarea";
-        textAreaRef.current.style = "";
+        detailsEmpty.current.className = "textarea-empty";
 
     }
-
-
+    
+    
     return (
         
         <div className="add-post">
@@ -160,12 +177,14 @@ const AddPost = () => {
                                 <p className="add-post__label-desc">Add a short, descriptive headline</p>
 
                                 <input ref={titleRef} value={titleValue} onChange={changeTitleValue} className="add-post__title-input" type="text" id="title" />
+                                <span ref={titleEmpty} className="title-empty">Title is empty. Please fill out title</span>
                                 
                             </label>
 
                                 <h2 className="add-post__label-title">Category</h2>
                                 <p className="add-post__label-desc">Choose a category for your feedback</p>
                                 <button ref={categoryRef} onClick={handleCategoryBtnClick} type="button" className={`add-post__category-btn ${className}`}><CurrentOption /></button>
+                                <span ref={categoryEmpty} className="category-empty">Category is not selected. Please select option</span>
 
                                 <RadioSelect
                                 selections={selections}
@@ -180,7 +199,7 @@ const AddPost = () => {
                                 <h2 className="add-post__label-title">Feedback Detail</h2>
                                 <p className="add-post__label-desc">Include any specific comments on what should be improved, added, etc.</p>
                                 <textarea ref={textAreaRef} value={descriptionValue} onChange={changeDescValue} name="details" cols="58" rows="7" className="add-post__details-textarea"></textarea>
-                                {/* <input className="add-post__details-input" type="text" /> */}
+                                <span ref={detailsEmpty} className="textarea-empty">Details is empty. Please fill out the details</span>
                             </label>
 
                         <Link className="add-post__cancel-btn" to="/">Cancel</Link>
