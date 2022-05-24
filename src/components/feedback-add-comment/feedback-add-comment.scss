@@ -1,0 +1,67 @@
+@import "../../sass/mixins";
+
+.feedback__add-comment {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+}
+
+.feedback__add-comment-content {
+    padding: 24px 32px 32px 34px;
+    margin: 0 auto;
+}
+
+.feedback__add-comment-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    color: #3A4374;
+    margin-bottom: 24px;
+}
+
+.feedback__add-comment-textarea {
+    border: none;
+    width: 664px;
+    margin: 0 auto;
+    height: 80px;
+    resize: none;
+    background-color: #F7F8FD;
+    border-radius: 5px;
+    padding: 16px 24px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #8C92B3;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.feedback__add-comment-textarea:focus {
+    outline: 1px solid #4661E6;
+}
+
+.feedback__add-comment-minimum-text {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #647196;
+    margin-left: 0;
+}
+
+.feedback__add-comment-submit-btn {
+    @include reset-btn;
+    margin-left: 60%;
+}
+
+.feedback__add-comment-submit-btn {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F2F4FE;
+    background-color: #AD1FEA;
+    padding: 12.5px 24px 11.5px 24px;
+    border-radius: 10px;
+}

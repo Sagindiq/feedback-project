@@ -74,7 +74,7 @@ const HeaderSortModal = (() => {
                         case "2":
                             return a.upvotes - b.upvotes;
                         case "3": 
-                            return (b.comments?.length ) - a.comments?.length  
+                            return (b.comments?.length || 0) - (a.comments?.length || 0)  
                         case "4": 
                             return (a.comments?.length || 0) - (b.comments?.length || 0)  
                     

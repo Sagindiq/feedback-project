@@ -187,7 +187,7 @@ const AddPost = () => {
                                 selections={selections}
                                 className="category"
                                 modalChange={categoryChange}
-                                defaultValue={lastOption}
+                                value={lastOption}
                                 isModal={isModal}
                                 width="456px"
                                 />

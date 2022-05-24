@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useData } from "../../components/contexts/data";
 import EmptyFeedback from "../../components/empty-feedback/empty-feedback";
 import Features from "../../components/feature/feature";
+import Addcomment from "../../components/feedback-add-comment/feedback-add-comment";
 import FeedbackComments from "../../components/feedback-comments/feedback-comments";
 import FeedbackHeader from "../../components/feedback-header/feedback-header";
 import FeedbackItems from "../../components/postArray/postArray";
@@ -22,7 +23,7 @@ const Feedback = (() => {
         return +feed.id == FeedbackParams.id;
     })
     // const { id, title, upvotes, categorsy, status, description, comments, isUpvoted} = data.productRequests[feedbackIndex];
-    const { comments } = feedbackItem;
+    const { comments, ...prop } = feedbackItem;
     
     const commentCount = comments ? comments.length : 0;
 
@@ -35,8 +36,10 @@ const Feedback = (() => {
             <FeedbackItems {...feedbackItem} link={false} />
 
             {
-                comments ? <FeedbackComments commentCount={commentCount} currenComment={comments} /> : <h2 style={{textAlign: "center", marginTop: "70px", lineHeight: "3"}}>Comment doesn't have: <br /> Hali commment qoshish va reply qilish joylarini qilmaganman</h2>
+                comments ? <FeedbackComments currentItem={feedbackItem} commentCount={commentCount} currenComment={comments} /> : null
             }
+
+            <Addcomment index={feedbackIndex} params={FeedbackParams} />
         </div>
         </div>
 

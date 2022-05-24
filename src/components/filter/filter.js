@@ -43,7 +43,7 @@ const Filter = () => {
 
     setStatus(statusCollection);
 
-    }, [])
+    }, []) // data berilishi kere edi.
 
     
     return (
