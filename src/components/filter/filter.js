@@ -1,6 +1,6 @@
 import {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 import FilterRadio from "../filter-radio/filter-radio";
 import "./filter.scss";
 const Filter = () => {

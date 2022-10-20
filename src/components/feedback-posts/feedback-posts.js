@@ -1,4 +1,4 @@
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 import FeedbackItems from "../postArray/postArray";
 
 const FeedbackPosts = () => {

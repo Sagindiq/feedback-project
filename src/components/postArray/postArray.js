@@ -3,7 +3,7 @@ import Features from "../feature/feature";
 import { useEffect, useRef, useState } from "react";
 import "./postArray.scss";
 import { Link } from "react-router-dom";
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 
 
 const FeedbackItems = (props) => {

@@ -1,6 +1,6 @@
 import {  useRef, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useData } from "../../components/contexts/data";
+import { useData } from "../../contexts/data";
 import EmptyFeedback from "../../components/empty-feedback/empty-feedback";
 import Features from "../../components/feature/feature";
 import Addcomment from "../../components/feedback-add-comment/feedback-add-comment";

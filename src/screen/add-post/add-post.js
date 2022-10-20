@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoBack from "../../components/back-btn/back-btn";
-import { useData } from "../../components/contexts/data";
+import { useData } from "../../contexts/data";
 import RadioSelect from "../../components/radio-component/radio-component";
 import "./add-post.scss";
 

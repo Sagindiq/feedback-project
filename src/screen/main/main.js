@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import MainIntro from "../../components/main-intro/main-intro";
 import { PostContext } from "../../App";
 import FeedbackPosts from "../../components/feedback-posts/feedback-posts";
-import { useData } from "../../components/contexts/data";
+import { useData } from "../../contexts/data";
 
 const Main = () => {
 

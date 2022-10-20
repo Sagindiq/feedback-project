@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 import "./feedback-add-comment.scss";
 
 const Addcomment = (({index, params}) => {

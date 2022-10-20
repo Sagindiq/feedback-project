@@ -1,7 +1,7 @@
 import "./header.scss";
 import HeaderLogo from "../../assets/img/lamp.png";
 import HeaderSortModal from "../header-sort-modal/header-sort-modal";
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 import { Link } from "react-router-dom";
 
 

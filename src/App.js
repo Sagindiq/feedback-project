@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import PostProvider from './components/contexts/data';
+import PostProvider from './contexts/data';
 import Feedback from './screen/feedback/feedback';
 import Main from './screen/main/main';
 import "./sass/main.scss";

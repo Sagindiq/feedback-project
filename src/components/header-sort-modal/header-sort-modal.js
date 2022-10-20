@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HeaderSortBtnImg from "../../assets/img/down-vector.svg";
-import { useData } from "../contexts/data";
+import { useData } from "../../contexts/data";
 import RadioSelect from "../radio-component/radio-component";
 import "./header-sort-modal.scss"
 
