@@ -1,0 +1,89 @@
+[33mcommit ca6154467bbd0f51ab297833e775f7f4678473cb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Sag'indiq Begaydarov <sogindiq77@gmail.com>
+Date:   Fri Oct 21 00:50:59 2022 +0500
+
+    first client side commit
+
+[33mcommit 62ef2b9134ec28a18531246d3f0082581202f1e1[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Tue May 24 17:25:55 2022 +0500
+
+    add post finished in feedback info page
+
+[33mcommit d8e968dc9a561bf2af2cea29ec9d2430872e4057[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Fri May 20 23:03:14 2022 +0500
+
+    edit modal started
+
+[33mcommit 2bc0b491c78af2ed70dd742ea7822d4e05312764[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Fri May 20 19:32:34 2022 +0500
+
+    add post fully completed
+
+[33mcommit 56445ef4d04384170c940adbce45b9028777ab8d[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Fri May 20 03:22:24 2022 +0500
+
+    add-post started and new required for me instaed of html required
+
+[33mcommit 448d0e6dcff848c0d14ffb750eb94fc4dcffd93e[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Thu May 19 03:07:21 2022 +0500
+
+    upvote finished and some mistakes corrected
+
+[33mcommit 4483a69e0aeb9b71634d16b152b00246309c633e[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Wed May 18 23:41:07 2022 +0500
+
+    context provider added and some bug fixed
+
+[33mcommit 1ebf058a1bbd38d79977a03c14cfb2a2aec8069d[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Tue May 17 20:37:38 2022 +0500
+
+    feedback some components created
+
+[33mcommit 3602ee7668575fb0c5c81622add1af12315c52eb[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Tue May 17 08:14:41 2022 +0500
+
+    feedback started
+
+[33mcommit 852d6d02d7e80ff29a2ecf8f0227ba915a6842d2[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Mon May 16 21:37:26 2022 +0500
+
+    main almost finished
+
+[33mcommit 69d088356306b1f2e1f903987fbe6171eccd7009[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Sat May 14 01:50:00 2022 +0500
+
+    firs time used data in react
+
+[33mcommit 6d47ff71e16df65a3c0e2e5ac78dec6fd553c500[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Thu May 12 02:00:41 2022 +0500
+
+    header almost finished and empty page finished
+
+[33mcommit d6d036b331d17d50874dbf03c7df357935864271[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Wed May 11 23:31:09 2022 +0500
+
+    finished filter
+
+[33mcommit ecf2716c829530afb53e0e1d7f893cf1cf7c6f94[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Mon May 9 23:28:08 2022 +0500
+
+    filter almost finished
+
+[33mcommit 87088d325a8dd90b620db8163f4e13526ea8ff21[m
+Author: Sagindiq <sogindi77@gmail.com>
+Date:   Thu May 5 10:41:07 2022 +0500
+
+    Initialize project using Create React App

@@ -1,4 +1,4 @@
-import upvoteImg from "../../assets/img/upvote-vector.svg"
+// import upvoteImg from "../../assets/img/upvote-vector.svg"
 import Features from "../feature/feature";
 import { useEffect, useRef, useState } from "react";
 import "./postArray.scss";
