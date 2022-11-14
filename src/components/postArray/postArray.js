@@ -1,6 +1,6 @@
 // import upvoteImg from "../../assets/img/upvote-vector.svg"
 import Features from "../feature/feature";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./postArray.scss";
 import { Link } from "react-router-dom";
 import { useData } from "../../contexts/data";

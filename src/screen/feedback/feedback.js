@@ -1,8 +1,8 @@
-import {  useRef, useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+// import {  useRef, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useData } from "../../contexts/data";
-import EmptyFeedback from "../../components/empty-feedback/empty-feedback";
-import Features from "../../components/feature/feature";
+// import EmptyFeedback from "../../components/empty-feedback/empty-feedback";
+// import Features from "../../components/feature/feature";
 import Addcomment from "../../components/feedback-add-comment/feedback-add-comment";
 import FeedbackComments from "../../components/feedback-comments/feedback-comments";
 import FeedbackHeader from "../../components/feedback-header/feedback-header";

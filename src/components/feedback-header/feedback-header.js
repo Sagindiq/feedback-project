@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import GoBack from "../back-btn/back-btn";
-import Button from "../buttons/button";
+// import Button from "../buttons/button";
 import "./faqs-header.scss";
 
 const FeedbackHeader = ({id}) => {
